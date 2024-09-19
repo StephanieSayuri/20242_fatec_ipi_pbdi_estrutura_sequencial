@@ -105,3 +105,16 @@ $$;
 -- pessoa no intervalo [1980, 2000] e gere um inteiro que representa o ano atual no intervalo
 -- [2010, 2020]. O programa deve exibir a idade da pessoa em anos. Desconsidere detalhes
 -- envolvendo dias, meses, anos bissextos etc.
+DO
+$$
+DECLARE
+  nasci INTEGER;
+  atual INTEGER;
+  limite_inferior INTEGER := 1;
+  limite_superior INTEGER := 100;
+BEGIN
+  nasci := 1980 + floor(random() * 21) :: int;
+  atual := 2010 + floor(random() * 11) :: int;
+  RAISE NOTICE 'ano de nascimento %, ano atual % e idade %', nasci, atual, atual - nasci;
+END;
+$$;
