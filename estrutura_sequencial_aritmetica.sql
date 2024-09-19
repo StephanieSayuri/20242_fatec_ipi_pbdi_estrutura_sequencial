@@ -6,7 +6,17 @@
 -- Números reais: [1, 10]
 
 -- 1.1 Faça um programa que gere um valor inteiro e o exiba.
-
+DO
+$$
+DECLARE
+  n1 INTEGER;
+  limite_inferior INTEGER := 1;
+  limite_superior INTEGER := 100;
+BEGIN
+  n1 := limite_inferior + floor(random() * (limite_superior - limite_inferior + 1)) :: int;
+  RAISE NOTICE '%', n1;
+END;
+$$;
 
 -- 1.2. Faça um programa que gere um valor real e o exiba.
 
