@@ -19,7 +19,17 @@ END;
 $$;
 
 -- 1.2. Faça um programa que gere um valor real e o exiba.
-
+DO
+$$
+DECLARE
+  n1 NUMERIC (10, 2);
+  limite_inferior INTEGER := 1;
+  limite_superior INTEGER := 10;
+BEGIN
+  n1 := limite_inferior + random() * (limite_superior - limite_inferior);
+  RAISE NOTICE '%', n1;
+END;
+$$;
 
 -- 1.3 Faça um programa que gere um valor real no intervalo [20, 30] que representa uma
 -- temperatura em graus Celsius. Faça a conversão para Fahrenheit e exiba.
