@@ -69,7 +69,18 @@ $$;
 
 -- 1.5 Faça um programa que gere um número inteiro e mostre a raiz cúbica de seu antecessor
 -- e a raiz quadrada de seu sucessor.
-
+DO
+$$
+DECLARE
+  n1 INTEGER;
+  limite_inferior INTEGER := 1;
+  limite_superior INTEGER := 100;
+BEGIN
+  n1 := limite_inferior + floor(random() * (limite_superior - limite_inferior + 1)) :: int;
+  RAISE NOTICE '%', ||/ (n1 - 1);
+  RAISE NOTICE '%', |/ (n1 + 1);
+END;
+$$;
 
 -- 1.6 Faça um programa que gere medidas reais de um terreno retangular. Gere também um
 -- valor real no intervalo [60, 70] que representa o preço por metro quadrado. O programa deve
