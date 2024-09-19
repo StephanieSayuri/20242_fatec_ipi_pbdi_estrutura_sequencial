@@ -49,7 +49,23 @@ $$;
 
 -- 1.4 Faça um programa que gere três valores reais a, b, e c e mostre o valor de delta: aquele
 -- que calculamos para chegar às potenciais raízes de uma equação do segundo grau.
-
+DO
+$$
+DECLARE
+  a NUMERIC (10, 2);
+  b NUMERIC (10, 2);
+  c NUMERIC (10, 2);
+  d NUMERIC (10, 2);
+  limite_inferior INTEGER := 1;
+  limite_superior INTEGER := 10;
+BEGIN
+  a := limite_inferior + random() * (limite_superior - limite_inferior);
+  b := limite_inferior + random() * (limite_superior - limite_inferior);
+  c := limite_inferior + random() * (limite_superior - limite_inferior);
+  d := b ^ 2 - (4 * a * c);
+  RAISE NOTICE 'A = %, B = %, C = %, DELTA = %', a, b, c, d;
+END;
+$$;
 
 -- 1.5 Faça um programa que gere um número inteiro e mostre a raiz cúbica de seu antecessor
 -- e a raiz quadrada de seu sucessor.
