@@ -33,7 +33,19 @@ $$;
 
 -- 1.3 Faça um programa que gere um valor real no intervalo [20, 30] que representa uma
 -- temperatura em graus Celsius. Faça a conversão para Fahrenheit e exiba.
-
+DO
+$$
+DECLARE
+  celsius NUMERIC (5, 1);
+  fahrenheit NUMERIC (5, 1);
+  limite_inferior INTEGER := 20;
+  limite_superior INTEGER := 30;
+BEGIN
+  celsius := limite_inferior + random() * (limite_superior - limite_inferior);
+  fahrenheit := celsius * 1.8 + 32;
+  RAISE NOTICE 'ceusius %C° = fahrenheit %F°', celsius, fahrenheit;
+END;
+$$;
 
 -- 1.4 Faça um programa que gere três valores reais a, b, e c e mostre o valor de delta: aquele
 -- que calculamos para chegar às potenciais raízes de uma equação do segundo grau.
