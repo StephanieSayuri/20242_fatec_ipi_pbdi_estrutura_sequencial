@@ -85,7 +85,21 @@ $$;
 -- 1.6 Faça um programa que gere medidas reais de um terreno retangular. Gere também um
 -- valor real no intervalo [60, 70] que representa o preço por metro quadrado. O programa deve
 -- exibir o valor total do terreno.
-
+DO
+$$
+DECLARE
+  a NUMERIC(10, 2);
+  l NUMERIC(10, 2);
+  p NUMERIC(10, 2);
+  limite_inferior INTEGER := 1;
+  limite_superior INTEGER := 10;
+BEGIN
+  a := limite_inferior + random() * (limite_superior - limite_inferior);
+  l := limite_inferior + random() * (limite_superior - limite_inferior);
+  p := 60 + random() * 70;
+  RAISE NOTICE 'preço = %', p;
+END;
+$$;
 
 -- 1.7 Escreva um programa que gere um inteiro que representa o ano de nascimento de uma
 -- pessoa no intervalo [1980, 2000] e gere um inteiro que representa o ano atual no intervalo
